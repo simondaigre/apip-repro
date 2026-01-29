@@ -6,7 +6,8 @@ use ApiPlatform\Symfony\Bundle\Test\ApiTestCase;
 
 class PersonTest extends ApiTestCase
 {
-    public function testGetCollection(): void{
+    public function testGetCollection(): void
+    {
         $client = static::createClient();
         $response = $client->request('GET', '/api/people', [
             'headers' => [

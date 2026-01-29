@@ -14,7 +14,7 @@ class PersonProvider implements ProviderInterface
         return [new PersonDto(
             cities: [
                 new CityDto(name: 'Paris'),
-                new CityDto(name: 'La Rochelle')
+                new CityDto(name: 'La Rochelle'),
             ]
         )];
     }

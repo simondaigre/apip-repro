@@ -2,7 +2,6 @@
 
 namespace App\Dto;
 
-use ApiPlatform\Metadata\ApiProperty;
 use ApiPlatform\Metadata\ApiResource;
 use Symfony\Component\JsonStreamer\Attribute\JsonStreamable;
 

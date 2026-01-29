@@ -1176,7 +1176,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     mercure?: bool|array{
  *         enabled?: bool|Param, // Default: false
  *         hub_url?: scalar|Param|null, // The URL sent in the Link HTTP header. If not set, will default to the URL for MercureBundle's default hub. // Default: null
- *         include_type?: bool|Param, // Always include @type in updates (including delete ones). // Default: false
+ *         include_type?: bool|Param, // Always include @var in updates (including delete ones). // Default: false
  *     },
  *     messenger?: bool|array{
  *         enabled?: bool|Param, // Default: false
@@ -1321,6 +1321,16 @@ use Symfony\Component\Config\Loader\ParamConfigurator as Param;
  *     twig?: TwigConfig,
  *     nelmio_cors?: NelmioCorsConfig,
  *     api_platform?: ApiPlatformConfig,
+ *     "when@dev"?: array{
+ *         imports?: ImportsConfig,
+ *         parameters?: ParametersConfig,
+ *         services?: ServicesConfig,
+ *         framework?: FrameworkConfig,
+ *         security?: SecurityConfig,
+ *         twig?: TwigConfig,
+ *         nelmio_cors?: NelmioCorsConfig,
+ *         api_platform?: ApiPlatformConfig,
+ *     },
  *     "when@prod"?: array{
  *         imports?: ImportsConfig,
  *         parameters?: ParametersConfig,
@@ -1420,6 +1430,7 @@ namespace Symfony\Component\Routing\Loader\Configurator;
  *     deprecated?: array{package:string, version:string, message?:string},
  * }
  * @psalm-type RoutesConfig = array{
+ *     "when@dev"?: array<string, RouteConfig|ImportConfig|AliasConfig>,
  *     "when@prod"?: array<string, RouteConfig|ImportConfig|AliasConfig>,
  *     "when@test"?: array<string, RouteConfig|ImportConfig|AliasConfig>,
  *     ...<string, RouteConfig|ImportConfig|AliasConfig>

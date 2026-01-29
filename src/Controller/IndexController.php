@@ -20,18 +20,16 @@ final class IndexController extends AbstractController
     #[Route('/', name: 'app_index')]
     public function index(): StreamedResponse
     {
-        $person = new PersonDto(
+        $person = [new PersonDto(
             cities: [
                 new CityDto(name: 'Paris'),
-                new CityDto(name: 'La Rochelle')
+                new CityDto(name: 'La Rochelle'),
             ]
-        );
+        )];
 
-        $type = Type::object(PersonDto::class);
-
+        $type = Type::list(Type::object(PersonDto::class));
         $json = $this->jsonStreamWriter->write($person, $type);
 
         return new StreamedResponse($json);
-
     }
 }

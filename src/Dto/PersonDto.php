@@ -12,7 +12,7 @@ use Symfony\Component\JsonStreamer\Attribute\JsonStreamable;
 #[ApiResource(
     shortName: 'Person',
     operations: [
-        new GetCollection()
+        new GetCollection(),
     ],
     provider: PersonProvider::class,
     jsonStream: true
