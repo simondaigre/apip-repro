@@ -21,7 +21,7 @@ readonly class PersonDto
 {
     public function __construct(
         /** @var CityDto[] */
-        #[ApiProperty(readableLink: false)]
+        #[ApiProperty(readableLink: true)]
         public array $cities,
     ) {
     }

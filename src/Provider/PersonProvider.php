@@ -11,11 +11,11 @@ class PersonProvider implements ProviderInterface
 {
     public function provide(Operation $operation, array $uriVariables = [], array $context = []): object|array|null
     {
-        return new PersonDto(
+        return [new PersonDto(
             cities: [
                 new CityDto(name: 'Paris'),
                 new CityDto(name: 'La Rochelle')
             ]
-        );
+        )];
     }
 }
